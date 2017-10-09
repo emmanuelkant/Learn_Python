@@ -1,10 +1,14 @@
 userStr = str(input('Write a sentence: '))
-outPut = ''
-if userStr in 'aeiou':
-	i = 0
-	while i < len(userStr) - 1:
-		char = userStr[i]
-		if char in 'aeiou':
-			outPut += char
+print(userStr)
+output = ''
+j = 0
+while j < len(userStr) - 1:
+	if userStr[j] in 'aeiou':
+		output += '*'
+	else:
+		output += userStr[j]
+	j += 1
+if output == '':
+	print('Your sentence has no vowel.')
 else:
-	print("Your sentence not have a voice letter")
+	print(output)
