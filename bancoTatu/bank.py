@@ -23,3 +23,13 @@ class ContaCorrente:
     def deposit(self, value):
         self.balance += value
         self.extract.append(["Deposit", value])
+
+class ContaEspecial(ContaCorrente):
+    def __init__(self, client, number, balance = 0, limit = 0):
+        ContaCorrente.__init__(self, client, number, balance)
+        self.limit = limit
+
+    def withdraw(self, value):
+        if value <= self.balance + self.limit:
+            self.balance -= value
+            self.extract.append(["Withdraw", value])
